@@ -1,7 +1,8 @@
 require("./hello")
-const calculateSum = require("./index");
+const {sum, result} = require("./index");
 
 var x = "Hello, World!";
 console.log(x);
 
-calculateSum()
+sum()
+result
