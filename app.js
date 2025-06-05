@@ -1,8 +1,11 @@
-require("./hello")
-const {sum, result} = require("./index");
+//require("./hello")
+import {result, sum} from "./index.js";
+//require("./sum")
+
+// const {sum, result} = require("./index");
 
 var x = "Hello, World!";
 console.log(x);
 
-sum()
-result
+// sum()
+// result
