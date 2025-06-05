@@ -1,0 +1,1 @@
+console.log("It is very important to write clean code.");
