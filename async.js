@@ -29,12 +29,11 @@ console.log("start")
 setTimeout(() => console.log("server coke 1"), 0);
 setTimeout(() => console.log("Pizza"), 10000);
 let sum =0
-
+for(let i=0; i<=100000000; i++){
+    sum += i
+}
 console.log("after loop")
 setTimeout(() => console.log("Noodles C"), 5000);
 setTimeout(() => console.log("server coke 2"), 0);
 setTimeout(() => console.log("Noodles E"), 5000);
 
-for(let i=0; i<=100000000; i++){
-    sum += i
-}
