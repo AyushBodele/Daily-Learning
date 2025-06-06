@@ -25,8 +25,16 @@ function multiply(x, y) {
 const output = multiply(a, b);
 console.log("Output of multiply function: ", output);
 
-setTimeout(() => console.log("serves coke 1"), 0);
+console.log("start")
+setTimeout(() => console.log("server coke 1"), 0);
 setTimeout(() => console.log("Pizza"), 10000);
+let sum =0
+
+console.log("after loop")
 setTimeout(() => console.log("Noodles C"), 5000);
-setTimeout(() => console.log("serves coke 2"), 0);
+setTimeout(() => console.log("server coke 2"), 0);
 setTimeout(() => console.log("Noodles E"), 5000);
+
+for(let i=0; i<=100000000; i++){
+    sum += i
+}
