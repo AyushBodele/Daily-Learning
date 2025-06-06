@@ -24,3 +24,9 @@ function multiply(x, y) {
 }
 const output = multiply(a, b);
 console.log("Output of multiply function: ", output);
+
+setTimeout(() => console.log("serves coke 1"), 0);
+setTimeout(() => console.log("Pizza"), 10000);
+setTimeout(() => console.log("Noodles C"), 5000);
+setTimeout(() => console.log("serves coke 2"), 0);
+setTimeout(() => console.log("Noodles E"), 5000);
