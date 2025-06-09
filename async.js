@@ -1,39 +1,10 @@
-const fs = require('fs');
-const https = require('https');
-
-console.log("Hey ! This is a test file for async.js");
-
-let a = 10;
-let b = 20;
-
-https.get('https://dummyjson.com/products/1', (res) => {
-    console.log("Fetched data successfully");
-});
-
-setTimeout(() => {
-    console.log("This is a timeout function");
-}, 5000);
-
-fs.readFile('file.txt', 'utf-8', (err, data) => {
-    console.log("File Data: ", data);
-});
-
-function multiply(x, y) {
-    const result = a * b;
-    return result;
+const fs = require("fs");
+const a = 100;
+setImmediate(() => console.log("setImmediate"));
+fs.readFile("file.txt", () => console.log("File Reading CB"));
+setTimeout(() => console.log("Timer expired"), 0);
+function printA() {
+  console.log("a=", a);
 }
-const output = multiply(a, b);
-console.log("Output of multiply function: ", output);
-
-console.log("start")
-setTimeout(() => console.log("server coke 1"), 0);
-setTimeout(() => console.log("Pizza"), 10000);
-let sum =0
-for(let i=0; i<=100000000; i++){
-    sum += i
-}
-console.log("after loop")
-setTimeout(() => console.log("Noodles C"), 5000);
-setTimeout(() => console.log("server coke 2"), 0);
-setTimeout(() => console.log("Noodles E"), 5000);
-
+printA();
+console.log("Last line of the file.");
