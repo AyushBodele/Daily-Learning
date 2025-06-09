@@ -20,5 +20,12 @@ function printA() {
   console.log("a=", a);
 }
 printA();
-process.nextTick(() => console.log("Next Tick Callback"));
+process.nextTick(() => {
+    process.nextTick(() => console.log("Inner Next Tick"));
+    console.log("Next Tick 1");
+    Promise.resolve().then(() => {
+        process.nextTick(() => console.log("Nested Inner Next Tick"));
+        Promise.resolve().then(() => console.log(" Inner Promise resolved"));
+    });
+});
 console.log("Last line of the file.");
