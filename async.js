@@ -1,12 +1,21 @@
 const fs = require("fs");
 const a = 100;
+setTimeout(() => console.log("Timer expired"), 0);
+
 setImmediate(() => console.log("setImmediate"));
-fs.readFile("file.txt", () => console.log("File Reading CB"));
+
+fs.readFile("file.txt", () =>{ 
+    console.log("File read completed");
+    process.nextTick(() => console.log("Next Tick 2"));
+    setImmediate(() => console.log("setImmediate 2"));
+});
+
 
 Promise.resolve().then(() => console.log("Promise resolved"));
+
 process.nextTick(() => console.log("Next Tick Callback"));
 
-setTimeout(() => console.log("Timer expired"), 0);
+
 function printA() {
   console.log("a=", a);
 }
