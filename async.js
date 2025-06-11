@@ -2,6 +2,8 @@ const fs = require("fs");
 const a = 100;
 setTimeout(() => console.log("Timer expired"), 0);
 
+console.log("Starting of code")
+
 setImmediate(() => console.log("setImmediate"));
 
 fs.readFile("file.txt", () =>{ 
